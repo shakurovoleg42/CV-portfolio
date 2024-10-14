@@ -1,5 +1,18 @@
 import React from "react";
-import { FaHtml5,FaCss3Alt ,FaJs, FaReact, FaVuejs, FaNpm, FaGulp, FaSass, FaLess } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaVuejs,
+  FaNpm,
+  FaGulp,
+  FaSass,
+  FaLess,
+  FaWordpress,
+  FaElementor,
+  FaRobot,
+} from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 
 export default function Skills() {
@@ -16,15 +29,17 @@ export default function Skills() {
           пользовательские интерфейсы, уделяя внимание удобству и эстетике.
         </p>
       </div>
-      <div className="mt-10 flex flex-wrap gap-6 font-poppins">
+      <div className="mt-10 flex flex-wrap gap-6  font-poppins">
         {skills.map((skill) => (
           <div
             key={skill.label}
-            className="flex flex-col items-start gap-1  max-w-[300px] h-auto"
+            className="flex flex-col items-start gap-1  max-w-[300px] h-auto border-[1px] p-2 rounded-md md:rounded-none  md:border-none"
           >
             <div className="">{skill.icon}</div>
             <div className="font-[800]">{skill.label}</div>
-            <div className="text-sm text-[#4f4f4f] font-[600]">{skill.text}</div>
+            <div className="text-sm text-[#4f4f4f] font-[600]">
+              {skill.text}
+            </div>
           </div>
         ))}
       </div>
@@ -40,10 +55,58 @@ const skills = [
   },
   {
     label: "React, Next, Vue",
-    icon: <div className="flex flex-row gap-2"><FaReact size={40} color="#00aeff"/><RiNextjsFill size={40} /><FaVuejs size={40} color="#41B883"/></div>,
+    icon: (
+      <div className="flex flex-row gap-2">
+        <FaReact size={40} color="#00aeff" />
+        <RiNextjsFill size={40} />
+        <FaVuejs size={40} color="#41B883" />
+      </div>
+    ),
     text: "Опыт работы с современными фреймворками для разработки комплексных SPA, улучшение производительности и управление состоянием.",
   },
-  { label: 'HTML & CSS', icon: <div className="flex flex-row gap-4"><FaHtml5 size={40} color="#DE6E3C"/><FaCss3Alt size={40} color="#53A7DC"/></div>, text: 'Верстка адаптивных и кроссбраузерных интерфейсов, внимание к семантике и доступности веб-страниц.' },
-  { label: 'npm & Gulp', icon: <div className="flex flex-row gap-1"><FaNpm size={40} color="#BB443E"/><FaGulp size={40} color="#BB443E"/></div>, text: 'Автоматизация сборки проектов, управление зависимостями и повышение эффективности разработки.' },
-  { label: 'Sass, Less', icon: <div className="flex flex-row gap-2"><FaSass size={40} color="#BF6B97"/><FaLess size={45} color="#25408F"/></div>, text: 'Использование препроцессоров для упрощения и улучшения стилей, создание модульных и поддерживаемых CSS-кодов.' },
+  {
+    label: "HTML & CSS",
+    icon: (
+      <div className="flex flex-row gap-4">
+        <FaHtml5 size={40} color="#DE6E3C" />
+        <FaCss3Alt size={40} color="#53A7DC" />
+      </div>
+    ),
+    text: "Верстка адаптивных и кроссбраузерных интерфейсов, внимание к семантике и доступности веб-страниц.",
+  },
+  {
+    label: "npm & Gulp",
+    icon: (
+      <div className="flex flex-row gap-1">
+        <FaNpm size={40} color="#BB443E" />
+        <FaGulp size={40} color="#BB443E" />
+      </div>
+    ),
+    text: "Автоматизация сборки проектов, управление зависимостями и повышение эффективности разработки.",
+  },
+  {
+    label: "Sass, Less",
+    icon: (
+      <div className="flex flex-row gap-2">
+        <FaSass size={40} color="#BF6B97" />
+        <FaLess size={45} color="#25408F" />
+      </div>
+    ),
+    text: "Использование препроцессоров для упрощения и улучшения стилей, создание модульных и поддерживаемых CSS-кодов.",
+  },
+  {
+    label: "Wordpress + Elementor",
+    icon: (
+      <div className="flex flex-row gap-2">
+        <FaWordpress size={40} color="#53A7DC" />
+        <FaElementor size={40} />
+      </div>
+    ),
+    text: "Разработка сайтов с нуля по макетам и сопровождение, контент менеджмент.",
+  },
+  {
+    label: "RPA - Zennoposter",
+    icon: <FaRobot size={40} color="#2c8dc9" />,
+    text: "Разработка ботов для автоматизации бизнесс-процессов, анализ и управление процессами. Интеграция с веб-сервисами, парсинг более 100.000 товаров.",
+  },
 ];

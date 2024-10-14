@@ -18,6 +18,8 @@ const config: Config = {
         background: "hsl(var(--background))",
         secondaryBg: "#5D6BA7",
         foreground: "hsl(var(--foreground))",
+        blur: "#f5f5f5",
+        
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -59,13 +61,21 @@ const config: Config = {
         textTitle: "#292929",
         text: "#4f4f4f",
       },
+      boxShadow: {
+        right: '4px 0 8px rgba(0, 0, 0, 0.2)', // Настройте значения по желанию
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      // Добавьте новую утилиту для плавной прокрутки
+      scrollBehavior: {
+        smooth: 'smooth',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
 };
+
 export default config;

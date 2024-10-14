@@ -6,9 +6,9 @@ import { CircleArrowRight, Image } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="w-full flex flex-row">
+    <div id="about" className="w-full flex flex-row p-10 bg-[#f9f9f9]">
       <div className="flex flex-col max-w-[768px]: text-start">
-        <h3 className="text-5xl font-[700] text-textTitle">Обо мне</h3>
+        <h3 className="text-4xl font-[600] text-textTitle">Обо мне</h3>
         <h2 className="text-[1.5rem] font-[500] text-text mt-4">
           Frontend Developer
         </h2>

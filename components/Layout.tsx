@@ -5,7 +5,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="w-full flex flex-row">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 pl-[300px]">
         {children}
       </main>
     </div>

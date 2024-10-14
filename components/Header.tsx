@@ -14,11 +14,11 @@ import { CgProfile } from "react-icons/cg";
 
 export default function Header() {
   const socialNav = [
-    { icon: <FaGithub size={30} />, href: "https://github.com/oleg-rus" },
-    { icon: <FaTelegram size={30} />, href: "https://t.me/oleg_rus" },
+    { icon: <FaGithub size={30} />, href: "https://github.com/shakurovoleg42" },
+    { icon: <FaTelegram size={30} />, href: "https://t.me/Sellkon" },
     {
       icon: <FaLinkedin size={30} />,
-      href: "https://www.linkedin.com/in/oleg-rus/",
+      href: "https://www.linkedin.com/in/oleg-shakurov-9550ba258/",
     },
   ];
   const headerNav = [

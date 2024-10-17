@@ -18,10 +18,10 @@ import { RiNextjsFill } from "react-icons/ri";
 export default function Skills() {
   return (
     <div id="skills" className="w-full flex flex-col p-10 bg-[#ffffff]">
-      <div className="border-l-[6px] border-l-secondaryBg">
+      <div className="border-l-[6px] border-l-secondaryBg ">
         <h3 className="text-3xl font-[600] text-textTitle pl-4 ">Мои навыки</h3>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 max-w-[900px]">
         <p>
           Имею опыт создания динамических и производительных веб-приложений,
           разработки комплексных SPA, оптимизации компонентов и управления
@@ -29,7 +29,7 @@ export default function Skills() {
           пользовательские интерфейсы, уделяя внимание удобству и эстетике.
         </p>
       </div>
-      <div className="mt-10 flex flex-wrap gap-6  font-poppins">
+      <div className="mt-10 flex flex-wrap gap-6  font-poppins max-w-[1280px]">
         {skills.map((skill) => (
           <div
             key={skill.label}

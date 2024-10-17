@@ -98,6 +98,8 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:underline hover:text-accent"
             >
               {link.icon}

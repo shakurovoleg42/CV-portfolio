@@ -1,11 +1,10 @@
 import React from "react";
 import { Button } from "./ui/button"; // Убедитесь, что компонент Button правильно экспортируется
 import Link from "next/link";
-import { FaGithub, FaTelegram, FaLinkedin } from "react-icons/fa";
+import { FaTelegram, FaLinkedin } from "react-icons/fa";
 
 export default function Contacts() {
   const socialNav = [
-    { icon: <FaGithub size={60} />, name: 'GitHub',href: "https://github.com/shakurovoleg42", hoverEffect:'hover:text-[#4f4f4f] transition duration-200' },
     { icon: <FaTelegram size={60} />, name: 'Телеграм',href: "https://t.me/Sellkon", hoverEffect:'hover:text-[#0088CC] transition duration-200' },
     {
       icon: <FaLinkedin size={60} />, name:

@@ -26,7 +26,7 @@ export default function Contacts() {
           </p>
         </div>
         <div>
-          <form action="" className="flex flex-col">
+          <form  className="flex flex-col">
             <input
               type="text"
               name="name"
@@ -48,7 +48,7 @@ export default function Contacts() {
               required
             />
             <div className="mt-6">
-              <Button>Отправить</Button>
+              <Button type="submit">Отправить</Button>
             </div>
           </form>
         </div>

@@ -30,7 +30,7 @@ export default function Header() {
         </div>
       ),
       label: "Обо мне",
-      href: "#about",
+      href: "/#about",
     },
     {
       icon: (
@@ -40,7 +40,7 @@ export default function Header() {
         </div>
       ),
       label: "Скилы",
-      href: "#skills",
+      href: "/#skills",
     },
     {
       icon: (
@@ -50,7 +50,7 @@ export default function Header() {
         </div>
       ),
       label: "Портфолио",
-      href: "#portfolio",
+      href: "/#portfolio",
     },
     {
       icon: (
@@ -60,7 +60,7 @@ export default function Header() {
         </div>
       ),
       label: "Места работы",
-      href: "#works",
+      href: "/#works",
     },
     {
       icon: (
@@ -70,7 +70,7 @@ export default function Header() {
         </div>
       ),
       label: "Контакты",
-      href: "#contacts",
+      href: "/#contacts",
     },
   ];
   return (

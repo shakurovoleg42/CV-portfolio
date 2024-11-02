@@ -33,7 +33,7 @@ function Portfolio() {
               <span className="hidden sm:block">-</span>
               <a
                 className="flex sm:items-center text-secondaryBg hover:underline"
-                href="https://oryx.kz"
+                href={item.link}
                 target="_blank"
               >
                 перейти на сайт
@@ -47,7 +47,7 @@ function Portfolio() {
             </div>
             {/* ссылка на отдельную страницу об этом проекте */}
             <div className="mt-2">
-              <a href={item.link}>
+              <a href={`projects/${item.slug}`}>
                 <Button>Подробнее</Button>
               </a>
             </div>
@@ -69,11 +69,39 @@ const portfolio = [
     tech: [
       { items: "Next.js" },
       { items: "Redux" },
-
-      { items: "MUI libraries" },
+      { items: "MUI" },
       { items: "Sass" },
       { items: "Laravel" },
     ],
     link: "https://oryx.kz",
+    slug: "oryx_kz",
+  },
+  {
+    id: 2,
+    name: "А-Промсталь",
+    description: "А-Промсталь - лучший металл в Казахстане",
+    image: "/promstal.png",
+    tech: [
+      { items: "Next.js" },
+      { items: "Redux" },
+      { items: "ui.shadcn" },
+      { items: "MUI libraries" },
+      { items: "Tailwind" },
+      { items: "Laravel" },
+    ],
+    link: "https://apromstal.kz",
+    slug: "promstal_kz",
+  },
+  {
+    id: 3,
+    name: "Coffeelogia",
+    description: "Кофе зерновой/молотый в Казахстане",
+    image: "/coffeelogia.png",
+    tech: [
+      { items: "WordPress" },
+      { items: "Elementor" },
+    ],
+    link: "https://coffeelogia.kz/",
+    slug: "coffeelogia_kz",
   },
 ];

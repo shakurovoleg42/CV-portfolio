@@ -4,7 +4,6 @@ import {
   FaCss3Alt,
   FaJs,
   FaReact,
-  FaVuejs,
   FaNpm,
   FaGulp,
   FaSass,
@@ -14,6 +13,9 @@ import {
   FaRobot,
 } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
+import { SiRedux } from "react-icons/si";
+import { GiBearFace } from "react-icons/gi";
+
 
 export default function Skills() {
   return (
@@ -54,12 +56,15 @@ const skills = [
     text: "Позволяющие создавать динамичные и интерактивные веб-приложения без использования фреймворков.",
   },
   {
-    label: "React, Next, Vue",
+    label: "React, NextJS, Redux, Zustand",
     icon: (
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-5">
         <FaReact size={40} color="#00aeff" />
         <RiNextjsFill size={40} />
-        <FaVuejs size={40} color="#41B883" />
+        <SiRedux size={35} color="#00aeff" />
+        <GiBearFace size={35} color="" />
+
+
       </div>
     ),
     text: "Опыт работы с современными фреймворками для разработки комплексных SPA, улучшение производительности и управление состоянием.",
@@ -107,6 +112,6 @@ const skills = [
   {
     label: "RPA - Zennoposter",
     icon: <FaRobot size={40} color="#2c8dc9" />,
-    text: "Разработка ботов для автоматизации бизнесс-процессов, анализ и управление процессами. Интеграция с веб-сервисами, парсинг более 100.000 товаров.",
+    text: "Разработка ботов для автоматизации бизнесс-процессов, анализ и управление процессами. Интеграция с веб-сервисами, парсинг более 500.000 товаров.",
   },
 ];

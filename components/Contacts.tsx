@@ -13,7 +13,7 @@ export default function Contacts() {
   ];
 
   return (
-    <div id="contacts" className="flex flex-row p-10 gap-10 bg-[#f9f9f9]">
+    <div id="contacts" className="flex flex-col sm:flex-row p-10 gap-10 bg-[#f9f9f9]">
       <div className="flex flex-col">
         <div className="border-l-[6px] border-l-secondaryBg">
           <h3 className="text-3xl font-[600] text-textTitle pl-4">
@@ -44,7 +44,7 @@ export default function Contacts() {
             <textarea
               name="message"
               placeholder="Сообщение"
-              className="max-w-[360px] h-[130px] border-[1px] border-border rounded-[5px] pl-4 mt-4"
+              className="max-w-[360px] h-[130px] border-[1px] border-border rounded-[5px] px-2 py-2 mt-4"
               required
             />
             <div className="mt-6">

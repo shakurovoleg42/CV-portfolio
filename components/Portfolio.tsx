@@ -85,7 +85,7 @@ const portfolio = [
       { items: "Next.js" },
       { items: "Redux" },
       { items: "ui.shadcn" },
-      { items: "MUI libraries" },
+      { items: "MUI" },
       { items: "Tailwind" },
       { items: "Laravel" },
     ],

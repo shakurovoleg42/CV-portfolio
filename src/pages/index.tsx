@@ -4,7 +4,7 @@ import About from "@/components/About";
 import Contacts from "@/components/Contacts";
 import Portfolio from "@/components/Portfolio";
 import Skills from "@/components/Skills";
-import Works from "@/components/Works";
+// import Works from "@/components/Works";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       <About />
       <Skills />
       <Portfolio />
-      <Works />
+      {/* <Works /> */}
       <Contacts />
     </div>
   );

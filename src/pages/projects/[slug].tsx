@@ -6,27 +6,34 @@ import React from "react";
 import { CiMenuBurger } from "react-icons/ci";
 
 function Project() {
+  const goBack = () => {
+    window.history.back();
+  };
+
   return (
     <div className="w-full h-[100%] flex flex-col justify-center p-10 bg-[#f9f9f9] font-poppins">
-      <div className="w-full text-center my-5 flex flex-col gap-4">
+      <div className="w-full text-center my-5 flex flex-col gap-2">
         <div>
-        <Link href="#portfolio">
-          <Button className="flex flex-row font-[700]">
+          <Link href="/">
+            <Button className="flex flex-row font-[700]">
+              <CircleArrowLeft className="mr-2 h-5 w-5" />К резюме
+            </Button>
+          </Link>
+        </div>
+        <div>
+          <Button className="flex flex-row font-[700]" onClick={goBack}>
             <CircleArrowLeft className="mr-2 h-5 w-5" />
             Вернуться назад
           </Button>
-        </Link>
         </div>
         <div>
-        <Link href="#portfolio">
-          <Button className="flex flex-row font-[700]">
-            <CiMenuBurger className="mr-2 h-5 w-5" />
-            Все проекты
-          </Button>
-        </Link>
+          <Link href="/projects">
+            <Button className="flex flex-row font-[700]">
+              <CiMenuBurger className="mr-2 h-5 w-5" />
+              Все проекты
+            </Button>
+          </Link>
         </div>
-        
-        
       </div>
       <div className="flex flex-col md:flex-row gap-5">
         <div>

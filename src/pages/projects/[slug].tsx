@@ -1,25 +1,55 @@
 /* eslint-disable @next/next/no-img-element */
+import { Button } from "@/components/ui/button";
+import { CircleArrowLeft } from "lucide-react";
+import Link from "next/link";
 import React from "react";
+import { CiMenuBurger } from "react-icons/ci";
 
 function Project() {
   return (
-    <div className="w-full flex flex-col md:flex-row p-10 bg-[#f9f9f9]">
-      <div className="flexx flex-col md:flex-row">
+    <div className="w-full h-[100%] flex flex-col justify-center p-10 bg-[#f9f9f9] font-poppins">
+      <div className="w-full text-center my-5 flex flex-col gap-4">
         <div>
-          <img src="/oryx.png" className="w-[100vw] h-[600px]" alt="oryx" />
+        <Link href="#portfolio">
+          <Button className="flex flex-row font-[700]">
+            <CircleArrowLeft className="mr-2 h-5 w-5" />
+            Вернуться назад
+          </Button>
+        </Link>
         </div>
         <div>
-          <h1>Oryx</h1>
+        <Link href="#portfolio">
+          <Button className="flex flex-row font-[700]">
+            <CiMenuBurger className="mr-2 h-5 w-5" />
+            Все проекты
+          </Button>
+        </Link>
+        </div>
+        
+        
+      </div>
+      <div className="flex flex-col md:flex-row gap-5">
+        <div>
+          <img
+            src="/oryx.png"
+            className="w-full sm:w-[40vw] md:w-[30vw] h-auto max-h-[300px] object-cover"
+            alt="oryx"
+          />
+        </div>
+        <div>
+          <h1 className="text-4xl font-[600] text-textTitle">Oryx</h1>
           <p>Описание проекта</p>
-          <p>Мой вклад</p>
         </div>
       </div>
       <div>
-        <h2>Технологии</h2>
+        <div></div>
         <div>
-          <ul>
-            <li>React</li>
-          </ul>
+          <h2>Технологии</h2>
+          <div>
+            {tech.map((item) => (
+              <div key={item.items}>{item.items}</div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -27,3 +57,11 @@ function Project() {
 }
 
 export default Project;
+
+const tech = [
+  { items: "Next.js" },
+  { items: "Redux" },
+  { items: "MUI" },
+  { items: "Sass" },
+  { items: "Laravel" },
+];

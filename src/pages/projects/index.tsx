@@ -29,11 +29,11 @@ function index() {
         <div className="w-full text-center">
           <h1 className="text-4xl font-[600] text-textTitle">Все проекты</h1>
         </div>
-        <div className="flex flex-wrap max-w-[90vw] justify-between mt-4 gap-4">
+        <div className="flex flex-wrap max-w-[90vw] justify-center items-center mt-4 gap-4">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col items-center gap-2 mt-4 max-w-[300px] h-auto border-[1px] border-gray-200 shadow-lg p-4 rounded-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
+              className="flex flex-col items-center gap-2 max-w-[300px] h-auto border-[1px] border-gray-200 shadow-lg p-4 rounded-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
             >
               <img
                 src={project.image}

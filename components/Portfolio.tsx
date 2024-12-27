@@ -9,9 +9,7 @@ function Portfolio() {
       className="flex flex-col p-10 gap-10 bg-[#f9f9f9] font-poppins"
     >
       <div className="border-l-[6px] border-l-secondaryBg">
-        <h3 className="text-3xl font-[600] text-textTitle pl-4">
-          Мои работы
-        </h3>
+        <h3 className="text-3xl font-[600] text-textTitle pl-4">Мои работы</h3>
       </div>
       {portfolio.map((item) => (
         <div
@@ -30,17 +28,17 @@ function Portfolio() {
           <div className="flex flex-col gap-3">
             <div className="flex flex-col sm:flex-row sm:items-center gap-2">
               <h5 className="text-4xl font-bold">{item.name}</h5>
-              <span className="hidden sm:block">-</span>
-              <a
+              {/* <span className="hidden sm:block">-</span> */}
+              {/* <a
                 className="flex sm:items-center text-secondaryBg hover:underline"
                 href={item.link}
                 target="_blank"
               >
                 перейти на сайт
-              </a>
+              </a> */}
             </div>
             <p className="text-[#4f4f4f]">{item.description}</p>
-            <div className="flex  flex-col ml-2">
+            <div className="flex flex-col ml-2">
               {item.tech.map((item) => (
                 <p key={item.items}>- {item.items}</p>
               ))}
@@ -97,10 +95,7 @@ const portfolio = [
     name: "Coffeelogia",
     description: "Кофе зерновой/молотый в Казахстане",
     image: "/coffeelogia.png",
-    tech: [
-      { items: "WordPress" },
-      { items: "Elementor" },
-    ],
+    tech: [{ items: "WordPress" }, { items: "Elementor" }],
     link: "https://coffeelogia.kz/",
     slug: "coffeelogia_kz",
   },

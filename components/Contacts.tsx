@@ -5,28 +5,38 @@ import { FaTelegram, FaLinkedin } from "react-icons/fa";
 
 export default function Contacts() {
   const socialNav = [
-    { icon: <FaTelegram size={60} />, name: 'Телеграм',href: "https://t.me/Sellkon", hoverEffect:'hover:text-[#0088CC] transition duration-200' },
     {
-      icon: <FaLinkedin size={60} />, name:
-'LinkedIn',      href: "https://www.linkedin.com/in/oleg-shakurov-9550ba258/", hoverEffect:'hover:text-[#0077B5] transition duration-200'
+      icon: <FaTelegram size={60} />,
+      name: "Телеграм",
+      href: "https://t.me/Sellkon",
+      hoverEffect: "hover:text-[#0088CC] transition duration-200",
+    },
+    {
+      icon: <FaLinkedin size={60} />,
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/oleg-shakurov-9550ba258/",
+      hoverEffect: "hover:text-[#0077B5] transition duration-200",
     },
   ];
 
   return (
-    <div id="contacts" className="flex flex-col sm:flex-row p-10 gap-10 bg-[#f9f9f9]">
+    <div
+      id="contacts"
+      className="flex flex-col sm:flex-row p-10 gap-10 bg-[#f9f9f9]"
+    >
       <div className="flex flex-col">
         <div className="border-l-[6px] border-l-secondaryBg">
-          <h3 className="text-3xl font-[600] text-textTitle pl-4">
+          <h3 className="text-3xl text-textTitle pl-4 font-[400] sm:font-[600] text-[22px]">
             Оставить заявку
           </h3>
         </div>
         <div className="mt-4">
-          <p className="text-[#4f4f4f]">
+          <p className="font-[400] sm:font-[600] text-[12px] sm:text-[16px] text-[#4f4f4f]">
             Заполните форму заявки сейчас, и я свяжусь с вами в ближайшее время.
           </p>
         </div>
         <div>
-          <form  className="flex flex-col">
+          <form className="flex flex-col">
             <input
               type="text"
               name="name"
@@ -56,26 +66,28 @@ export default function Contacts() {
 
       <div className="flex flex-col">
         <div className="border-l-[6px] border-l-secondaryBg">
-          <h3 className="text-3xl font-[600] text-textTitle pl-4">
+          <h3 className="text-3xlfont-[400] sm:font-[600] text-[12px] sm:text-[22px] text-textTitle pl-4">
             Или свяжитесь со мной напрямую
           </h3>
         </div>
         <div className="flex w-full mt-4">
-          {" "}
           {socialNav.map((nav) => (
-            <div key={nav.href} className="w-full flex flex-row items-center justify-center">
-              <div className="flex flex-col items-center">
-              <Link
-                href={nav.href}
-                target="_blank"
-                className={nav.hoverEffect}
-              >
-                {nav.icon}
-              </Link>
-              
-              <div className="mt-3">
-                <p>{nav.name}</p>
-              </div>
+            <div
+              key={nav.href}
+              className="w-full flex flex-row items-center justify-center"
+            >
+              <div className="flex flex-col items-center text-[12px] lg:text-[22px]">
+                <Link
+                  href={nav.href}
+                  target="_blank"
+                  className={nav.hoverEffect}
+                >
+                  {nav.icon}
+                </Link>
+
+                <div className="mt-3">
+                  <p>{nav.name}</p>
+                </div>
               </div>
             </div>
           ))}

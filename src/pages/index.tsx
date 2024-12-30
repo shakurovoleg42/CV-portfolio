@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="w-full flex flex-row">
       <Header />
-      <div className="w-full flex flex-col  flex-1 pl-[150px] sm:pl-[200px] md:pl-[250px] lg:pl-[300px]">
+      <div className="w-full flex flex-col flex-1 pl-[60px] sm:pl-[200px] md:pl-[250px] lg:pl-[300px]">
         <About />
         <Skills />
         <Portfolio />

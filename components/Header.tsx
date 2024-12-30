@@ -74,10 +74,10 @@ export default function Header() {
     },
   ];
   return (
-    <div className="max-w-[150px]  sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] fixed h-full bg-secondaryBg shadow-right text-white px-4 py-4">
+    <div className="w-auto max-w-[150px]  sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] fixed h-full bg-secondaryBg shadow-right text-white px-4 sm:px-4 py-4">
       <div className="flex flex-col items-center">
         <div>
-          <h1 className="text-[18px] sm:text-2xl md:text-3xl text-center font-[800]">
+          <h1 className="hidden md:block text-[18px] sm:text-2xl md:text-3xl text-center font-[800]">
             Frontend Developer
           </h1>
         </div>
@@ -90,7 +90,7 @@ export default function Header() {
             className="rounded-full"
           />
         </div>
-        <div className="mt-5 max-w-[400px]">
+        <div className="hidden md:block mt-5 max-w-[400px]">
           <p className="text-center font-[300]">
             Frontend-разработчик с более чем двумя годами опыта.
           </p>

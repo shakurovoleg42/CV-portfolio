@@ -2,17 +2,19 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { CircleArrowRight, Image } from "lucide-react";
+import { CircleArrowRight } from "lucide-react";
 
 export default function About() {
   return (
     <div
       id="about"
-      className="w-full flex flex-col md:flex-row p-10 bg-[#f9f9f9]"
+      className="w-full flex flex-col md:flex-row py-10 px-[8px] lg:p-10 bg-[#f9f9f9]"
     >
       <div className="flex flex-col max-w-[768px]: text-start">
-        <h3 className="text-4xl font-[600] text-textTitle">Обо мне</h3>
-        <h2 className="text-[1.5rem] font-[500] text-text mt-4">
+        <h3 className="text-[18px] sm:text-2xl md:text-3xl font-[600] text-textTitle">
+          Обо мне
+        </h3>
+        <h2 className="text-[18px] sm:text-2xl md:text-3xl font-[500] text-text mt-4">
           Frontend Developer
         </h2>
         <div className="max-w-[768px] flex flex-col gap-2 mt-4 text-[1rem] font-[500] text-[#4f4f4f]">
@@ -39,9 +41,6 @@ export default function About() {
             </Button>
           </Link>
         </div>
-      </div>
-      <div className="p-4">
-        <Image className="hidden md:block" />
       </div>
     </div>
   );

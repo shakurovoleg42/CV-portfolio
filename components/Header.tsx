@@ -77,9 +77,11 @@ export default function Header() {
     <div className="max-w-[150px]  sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] fixed h-full bg-secondaryBg shadow-right text-white px-4 py-4">
       <div className="flex flex-col items-center">
         <div>
-          <h1 className="text-2xl font-[800]">Frontend Developer</h1>
+          <h1 className="text-[18px] sm:text-2xl md:text-3xl text-center font-[800]">
+            Frontend Developer
+          </h1>
         </div>
-        <div className="mt-9">
+        <div className="hidden md:block mt-9">
           <Image
             src="/avatar.jpg"
             alt="logo"

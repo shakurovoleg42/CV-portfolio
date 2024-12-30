@@ -22,11 +22,11 @@ export default function Contacts() {
   return (
     <div
       id="contacts"
-      className="flex flex-col sm:flex-row p-10 gap-10 bg-[#f9f9f9]"
+      className="flex flex-wrap py-10 px-[8px] lg:p-10 gap-10 bg-[#f9f9f9]"
     >
       <div className="flex flex-col">
         <div className="border-l-[6px] border-l-secondaryBg">
-          <h3 className="text-3xl text-textTitle pl-4 font-[400] sm:font-[600] text-[22px]">
+          <h3 className="text-[18px] sm:text-2xl md:text-3xl text-textTitle pl-4 font-[400] sm:font-[600]">
             Оставить заявку
           </h3>
         </div>
@@ -35,30 +35,32 @@ export default function Contacts() {
             Заполните форму заявки сейчас, и я свяжусь с вами в ближайшее время.
           </p>
         </div>
-        <div>
+        <div className="w-full max-w-md mx-auto p-4">
           <form className="flex flex-col">
             <input
               type="text"
               name="name"
               placeholder="Имя"
-              className="max-w-[340px] h-[50px] border-[1px] border-border rounded-[5px] pl-4 mt-4"
+              className="w-full h-[50px] border-[1px] border-border rounded-[5px] pl-4 mt-4"
               required
             />
             <input
               type="email"
               name="email"
               placeholder="Ваш e-mail"
-              className="max-w-[340px] h-[50px] border-[1px] border-border rounded-[5px] pl-4 mt-4"
+              className="w-full h-[50px] border-[1px] border-border rounded-[5px] pl-4 mt-4"
               required
             />
             <textarea
               name="message"
               placeholder="Сообщение"
-              className="max-w-[360px] h-[130px] border-[1px] border-border rounded-[5px] px-2 py-2 mt-4"
+              className="w-full h-[130px] border-[1px] border-border rounded-[5px] px-2 py-2 mt-4"
               required
             />
             <div className="mt-6">
-              <Button type="submit">Отправить</Button>
+              <Button type="submit" className="w-full sm:w-auto">
+                Отправить
+              </Button>
             </div>
           </form>
         </div>

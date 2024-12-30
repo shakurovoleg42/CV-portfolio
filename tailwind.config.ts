@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import tailwindcssAnimate from 'tailwindcss-animate';
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: ["class"],
@@ -20,7 +20,7 @@ const config: Config = {
         secondaryBg: "#5D6BA7",
         foreground: "hsl(var(--foreground))",
         blur: "#f5f5f5",
-        
+
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -63,7 +63,7 @@ const config: Config = {
         text: "#4f4f4f",
       },
       boxShadow: {
-        right: '4px 0 8px rgba(0, 0, 0, 0.2)', // Настройте значения по желанию
+        right: "4px 0 8px rgba(0, 0, 0, 0.2)", // Настройте значения по желанию
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -71,12 +71,12 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       scrollBehavior: {
-        smooth: 'smooth',
+        smooth: "smooth",
       },
       animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
   plugins: [tailwindcssAnimate, require("tailwindcss-animate")],

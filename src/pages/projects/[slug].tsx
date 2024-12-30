@@ -30,7 +30,7 @@ function Project() {
   ];
 
   return (
-    <div className="w-full h-[100%] flex flex-col items-center justify-center p-3 bg-[#f9f9f9] font-poppins pb-10">
+    <div className="w-full h-full flex flex-col items-center justify-center p-3 bg-[#f9f9f9] font-poppins pb-10">
       <div className="w-full text-center p-0 lg:p-5 x flex flex-col gap-2">
         <div>
           <Link href="/">
@@ -74,7 +74,7 @@ function Project() {
               />
             </div>
             <div className="flex flex-col gap-4 lg:gap-10">
-              <h1 className="text-4xl font-[600] text-textTitle">
+              <h1 className="text-[18px] sm:text-2xl md:text-3xl font-[600] text-textTitle">
                 {proj.name}
               </h1>
               <p className="max-w-[600px] font-[400] sm:font-[600] text-[12px] sm:text-[16px]">

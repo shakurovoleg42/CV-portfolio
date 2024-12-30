@@ -7,7 +7,7 @@ import { CiMenuBurger } from "react-icons/ci";
 
 function index() {
   return (
-    <div className="w-full flex flex-col p-10 bg-[#f9f9f9] gap-5">
+    <div className="w-full flex flex-col py-10 px-2 lg:p-10 bg-[#f9f9f9] gap-5">
       <div className="w-full text-center my-5 flex flex-col gap-4">
         <div>
           <Link href="/">
@@ -27,23 +27,36 @@ function index() {
       </div>
       <div className="felx flex-col ">
         <div className="w-full text-center">
-          <h1 className="text-4xl font-[600] text-textTitle">Все проекты</h1>
+          <h1 className="text-[18px] sm:text-2xl md:text-3xl font-[600] text-textTitle">
+            Далее проекты разработанные в команде и в одиночку
+          </h1>
         </div>
-        <div className="flex flex-wrap max-w-[90vw] justify-center items-center mt-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-[90vw] mx-auto justify-items-center items-center mt-4 gap-6">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col items-center gap-2 max-w-[300px] h-auto border-[1px] border-gray-200 shadow-lg p-4 rounded-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
+              className="flex flex-col justify-center items-center gap-2 w-full h-auto border-[1px] border-gray-200 shadow-lg p-5 rounded-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
             >
               <img
                 src={project.image}
                 alt={project.name}
                 className="rounded-lg"
               />
-              <p className="font-semibold text-lg mt-2">{project.name}</p>
+              <div className="flex flex-col xl:flex-row  gap-2 mt-2">
+                <p className="font-semibold text-[18px] sm:text-2xl">
+                  {project.name}
+                </p>
+                <p className="text-[12px] sm:text-[16px]">
+                  - Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Dolore porro eligendi voluptate provident perferendis libero
+                  illum doloremque ipsum repellat, reiciendis delectus ut sit,
+                  voluptatum asperiores, architecto nobis odio. Porro, iure?
+                </p>
+              </div>
+
               <div className="mt-5">
                 <Link href={`/projects/${project.slug}`}>
-                  <Button className="flex flex-row font-[700]">
+                  <Button className="flex flex-row font-[700] text-[10px] sm:text-[16px]">
                     <CircleArrowRight className="mr-2 h-5 w-5" />
                     Посмотреть
                   </Button>

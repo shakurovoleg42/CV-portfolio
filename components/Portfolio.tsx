@@ -6,10 +6,12 @@ function Portfolio() {
   return (
     <div
       id="portfolio"
-      className="flex flex-col p-10 gap-10 bg-[#f9f9f9] font-poppins"
+      className="flex flex-col py-10 px-[8px] lg:p-10 gap-10 bg-[#f9f9f9] font-poppins"
     >
       <div className="border-l-[6px] border-l-secondaryBg">
-        <h3 className="text-3xl font-[600] text-textTitle pl-4">Мои работы</h3>
+        <h3 className="text-[18px] sm:text-2xl md:text-3xl font-[600] text-textTitle pl-4">
+          Мои работы
+        </h3>
       </div>
       {portfolio.map((item) => (
         <div
@@ -27,7 +29,9 @@ function Portfolio() {
           </div>
           <div className="flex flex-col gap-3">
             <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-              <h5 className="text-4xl font-bold">{item.name}</h5>
+              <h5 className="text-[18px] sm:text-2xl md:text-3xl font-bold">
+                {item.name}
+              </h5>
               {/* <span className="hidden sm:block">-</span> */}
               {/* <a
                 className="flex sm:items-center text-secondaryBg hover:underline"

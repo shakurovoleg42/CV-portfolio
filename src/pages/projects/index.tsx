@@ -4,8 +4,29 @@ import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
 import React from "react";
 import Link from "next/link";
 import { CiMenuBurger } from "react-icons/ci";
+// import usePortfolioState from "@/src/store/usePortfolioStore";
+import axios from "axios";
+// import { useRouter } from "next/router";
 
-function index() {
+function Index() {
+  const [projects, setProjects] = React.useState<
+    {
+      id: string;
+      slug: string;
+      title: string;
+      description: string;
+      images: string;
+    }[]
+  >([]);
+
+  React.useEffect(() => {
+    const fetchPortfolio = async () => {
+      const data = await axios.get(`${process.env.NEXT_PUBLIC_API}portfolio`);
+      setProjects(data.data);
+    };
+    fetchPortfolio();
+  }, []);
+
   return (
     <div className="w-full flex flex-col py-10 px-2 lg:p-10 bg-[#f9f9f9] gap-5">
       <div className="w-full text-center my-5 flex flex-col gap-4">
@@ -38,24 +59,26 @@ function index() {
               className="flex flex-col justify-center items-center gap-2 w-full h-auto border-[1px] border-gray-200 shadow-lg p-5 rounded-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
             >
               <img
-                src={project.image}
-                alt={project.name}
+                src={project.images}
+                alt={project.title}
                 className="rounded-lg"
               />
               <div className="flex flex-col xl:flex-row  gap-2 mt-2">
                 <p className="font-semibold text-[18px] sm:text-2xl">
-                  {project.name}
+                  {project.title}
                 </p>
                 <p className="text-[12px] sm:text-[16px]">
-                  - Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Dolore porro eligendi voluptate provident perferendis libero
-                  illum doloremque ipsum repellat, reiciendis delectus ut sit,
-                  voluptatum asperiores, architecto nobis odio. Porro, iure?
+                  - {project.description}
                 </p>
               </div>
 
               <div className="mt-5">
-                <Link href={`/projects/${project.slug}`}>
+                <Link
+                  href={{
+                    pathname: `/projects/${project.slug}`,
+                    query: { title: project.slug },
+                  }}
+                >
                   <Button className="flex flex-row font-[700] text-[10px] sm:text-[16px]">
                     <CircleArrowRight className="mr-2 h-5 w-5" />
                     Посмотреть
@@ -70,66 +93,4 @@ function index() {
   );
 }
 
-export default index;
-const projects = [
-  {
-    id: 1,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-  {
-    id: 2,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-  {
-    id: 3,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-  {
-    id: 4,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-  {
-    id: 5,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-  {
-    id: 6,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-  {
-    id: 7,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-  {
-    id: 8,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-  {
-    id: 9,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-  {
-    id: 10,
-    slug: "oryx_kz",
-    name: "Oryx",
-    image: "/oryx.png",
-  },
-];
+export default Index;

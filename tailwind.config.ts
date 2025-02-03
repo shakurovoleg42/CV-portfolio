@@ -17,7 +17,7 @@ const config: Config = {
       },
       colors: {
         background: "hsl(var(--background))",
-        secondaryBg: "#5D6BA7",
+        secondaryBg: "#171819",
         foreground: "hsl(var(--foreground))",
         blur: "#f5f5f5",
 

@@ -12,7 +12,7 @@ import {
   FaElementor,
   FaRobot,
 } from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
+import { RiNextjsFill, RiNodejsLine } from "react-icons/ri";
 import { SiRedux } from "react-icons/si";
 import { GiBearFace } from "react-icons/gi";
 
@@ -115,5 +115,10 @@ const skills = [
     label: "RPA - Zennoposter",
     icon: <FaRobot size={40} color="#2c8dc9" />,
     text: "Разработка ботов для автоматизации бизнесс-процессов, анализ и управление процессами. Интеграция с веб-сервисами, парсинг более 500.000 товаров.",
+  },
+  {
+    label: "Node JS",
+    icon: <RiNodejsLine size={40} color="green" />,
+    text: "Разработка серверных приложений и API, работа с базами данных, создание простых микросервисов и интеграция с внешними API.",
   },
 ];

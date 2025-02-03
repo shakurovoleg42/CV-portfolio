@@ -8,39 +8,43 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { useRouter } from "next/router";
 import axios from "axios";
+import Image from "next/image";
 
 function Project() {
   const router = useRouter();
-  const { title } = router.query;
+  const { slug } = router.query;
 
   const [project, setProject] = useState<
     {
       id: string;
-      slug: string;
       title: string;
       description: string;
       technologies: string[];
       list: string[];
       images: string[];
+      linkToOriginal: string;
     }[]
   >([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!title) return; // Ждём загрузки title перед выполнением запроса
+    if (!slug) return;
 
     const fetchPortfolio = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.NEXT_PUBLIC_API}portfolio/${title}`
+          `${process.env.NEXT_PUBLIC_API}portfolio/${slug}`
         );
-        setProject([data]); // Оборачиваем объект в массив для удобства работы
+        setProject([data]);
+        setError(null);
       } catch (error) {
         console.error("Ошибка загрузки проекта:", error);
+        setError("Не удалось загрузить проект. Пожалуйста, попробуйте позже.");
       }
     };
 
     fetchPortfolio();
-  }, [title]);
+  }, [slug]);
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-3 bg-[#f9f9f9] font-poppins pb-10">
@@ -71,19 +75,32 @@ function Project() {
         </div>
       </div>
 
-      {project.length > 0 ? (
+      {error ? (
+        <>
+          <Image
+            src="/404.svg"
+            alt="error"
+            className="mt-10"
+            width={500}
+            height={333}
+          />
+          <p className="mt-10 text-red-500 font-bold text-center text-[32px]">
+            {error}
+          </p>
+        </>
+      ) : project.length > 0 ? (
         <>
           {project.map((proj) => (
             <div
-              key={proj.slug}
+              key={proj.title}
               className="flex flex-col items-center justify-center md:flex-row gap-2 lg:gap-8 mt-8"
             >
               <div className="xl:w-[40vw] min-h-[150px] items-center flex object-cover">
                 {proj.images.length > 0 && (
                   <ImageGallery
                     items={proj.images.map((img) => ({
-                      original: img,
-                      thumbnail: img,
+                      original: `http://localhost:8080/${img}`,
+                      thumbnail: `http://localhost:8080/${img}`,
                     }))}
                     showPlayButton={false}
                     showIndex={true}
@@ -126,7 +143,7 @@ function Project() {
 
       <div className="mt-10 flex lg:hidden items-center">
         {project.map((proj) => (
-          <div key={proj.slug} className="flex flex-col gap-5">
+          <div key={proj.title} className="flex flex-col gap-5">
             <div className="font-[400] sm:font-[600] text-[12px] sm:text-[16px]">
               <ul className="flex flex-col gap-1">
                 {proj.list.map((item, index) => (
@@ -147,6 +164,15 @@ function Project() {
           </div>
         ))}
       </div>
+      {project.length > 0 ? (
+        <div className="w-full flex items-start">
+          <a href={project[0]?.linkToOriginal} target="_blank">
+            <Button className="mt-4 decoration-border bg-[#171819] text-white rounded-md p-2 hover:translate-y-1 transition-all duration-300 select-none">
+              Перейти на этот сайт ⤴
+            </Button>
+          </a>
+        </div>
+      ) : null}
     </div>
   );
 }

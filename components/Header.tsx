@@ -74,7 +74,7 @@ export default function Header() {
     },
   ];
   return (
-    <div className="w-auto max-w-[150px]  sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] fixed h-full bg-secondaryBg shadow-right text-white px-4 sm:px-4 py-4">
+    <div className="w-auto max-w-[150px]  sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] fixed h-full bg-[#171819] shadow-right text-white px-4 sm:px-4 py-4">
       <div className="flex flex-col items-center">
         <div>
           <h1 className="hidden md:block text-[18px] sm:text-2xl md:text-3xl text-center font-[800]">
@@ -90,11 +90,11 @@ export default function Header() {
             className="rounded-full"
           />
         </div>
-        <div className="hidden md:block mt-5 max-w-[400px]">
+        {/* <div className="hidden md:block mt-5 max-w-[400px]">
           <p className="text-center font-[300]">
             Frontend-разработчик с более чем двумя годами опыта.
           </p>
-        </div>
+        </div> */}
         <div className="flex flex-col md:flex-row items-center justify-between text-sm font-[600] gap-3 mt-5">
           {socialNav.map((link) => (
             <Link

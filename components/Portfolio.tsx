@@ -76,13 +76,13 @@ const portfolio = [
       { items: "Laravel" },
     ],
     link: "https://oryx.kz",
-    slug: "oryx_kz",
+    slug: "oryx",
   },
   {
     id: 2,
     name: "А-Промсталь",
     description: "А-Промсталь - лучший металл в Казахстане",
-    image: "/promstal.png",
+    image: "/apromstal.png",
     tech: [
       { items: "Next.js" },
       { items: "Redux" },
@@ -92,7 +92,7 @@ const portfolio = [
       { items: "Laravel" },
     ],
     link: "https://apromstal.kz",
-    slug: "promstal_kz",
+    slug: "apromstal",
   },
   {
     id: 3,
@@ -101,6 +101,6 @@ const portfolio = [
     image: "/coffeelogia.png",
     tech: [{ items: "WordPress" }, { items: "Elementor" }],
     link: "https://coffeelogia.kz/",
-    slug: "coffeelogia_kz",
+    slug: "coffeelogia",
   },
 ];

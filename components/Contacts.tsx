@@ -1,9 +1,19 @@
-import React from "react";
-import { Button } from "./ui/button"; // Убедитесь, что компонент Button правильно экспортируется
+import React, { useState } from "react";
+import { Button } from "./ui/button";
 import Link from "next/link";
 import { FaTelegram, FaLinkedin } from "react-icons/fa";
+import { ChangeEvent } from "react";
 
 export default function Contacts() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState<string | null>(null);
+
   const socialNav = [
     {
       icon: <FaTelegram size={60} />,
@@ -18,6 +28,50 @@ export default function Contacts() {
       hoverEffect: "hover:text-[#0077B5] transition duration-200",
     },
   ];
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    setLoading(true);
+    setResponseMessage(null);
+
+    try {
+      const response = await fetch(
+        `${
+          process.env.NEXT_PUBLIC_API
+        }telegram/telegram-form?name=${encodeURIComponent(
+          formData.name
+        )}&email=${encodeURIComponent(
+          formData.email
+        )}&message=${encodeURIComponent(formData.message)}`,
+        {
+          method: "GET",
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResponseMessage("✅ Заявка успешно отправлена!");
+        setFormData({ name: "", email: "", message: "" }); // Очищаем форму
+      } else {
+        setResponseMessage("❌ Ошибка отправки. Попробуйте позже.");
+      }
+    } catch (error) {
+      console.log("Ошибка отправки заявки:", error);
+      setResponseMessage("❌ Ошибка сети. Проверьте подключение.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div
@@ -36,33 +90,46 @@ export default function Contacts() {
           </p>
         </div>
         <div className="w-full max-w-md mx-auto p-4">
-          <form className="flex flex-col">
+          <form className="flex flex-col" onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"
               placeholder="Имя"
+              value={formData.name}
+              onChange={handleChange}
               className="w-full h-[50px] border-[1px] border-border rounded-[5px] pl-4 mt-4"
               required
             />
             <input
-              type="email"
+              type="text"
               name="email"
-              placeholder="Ваш e-mail"
+              placeholder="Ваш e-mail или телеграм"
+              value={formData.email}
+              onChange={handleChange}
               className="w-full h-[50px] border-[1px] border-border rounded-[5px] pl-4 mt-4"
               required
             />
             <textarea
               name="message"
               placeholder="Сообщение"
+              value={formData.message}
+              onChange={handleChange}
               className="w-full h-[130px] border-[1px] border-border rounded-[5px] px-2 py-2 mt-4"
               required
             />
             <div className="mt-6">
-              <Button type="submit" className="w-full sm:w-auto">
-                Отправить
+              <Button
+                type="submit"
+                className="w-full sm:w-auto"
+                disabled={loading}
+              >
+                {loading ? "Отправка..." : "Отправить"}
               </Button>
             </div>
           </form>
+          {responseMessage && (
+            <p className="mt-4 text-center text-sm">{responseMessage}</p>
+          )}
         </div>
       </div>
 

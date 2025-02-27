@@ -33,7 +33,7 @@ function Project() {
     const fetchPortfolio = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.NEXT_PUBLIC_API}portfolio/${slug}`
+          `${process.env.NEXT_PUBLIC_API}/portfolio/${slug}`
         );
         setProject([data]);
         setError(null);

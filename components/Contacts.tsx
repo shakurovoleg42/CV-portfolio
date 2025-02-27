@@ -47,7 +47,7 @@ export default function Contacts() {
       const response = await fetch(
         `${
           process.env.NEXT_PUBLIC_API
-        }telegram/telegram-form?name=${encodeURIComponent(
+        }/telegram/telegram-form?name=${encodeURIComponent(
           formData.name
         )}&email=${encodeURIComponent(
           formData.email

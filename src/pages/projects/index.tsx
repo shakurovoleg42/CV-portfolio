@@ -24,7 +24,9 @@ function Index() {
   React.useEffect(() => {
     const fetchPortfolio = async () => {
       try {
-        const data = await axios.get(`${process.env.NEXT_PUBLIC_API}portfolio`);
+        const data = await axios.get(
+          `${process.env.NEXT_PUBLIC_API}/portfolio`
+        );
         setProjects(data.data);
       } catch (error) {
         console.log("Ошибка загрузки проектов:", error);

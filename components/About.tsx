@@ -32,7 +32,7 @@ export default function About() {
           </p>
         </div>
         <div className="mt-5 w-full sm:w-auto">
-          <Link href="#portfolio">
+          <Link href="/projects">
             <Button className="flex flex-col sm:flex-row items-center font-[700] p-2 sm:p-4">
               <CircleArrowRight className="mb-2 sm:mb-0 sm:mr-2 h-5 w-5" />
               <span className="text-center sm:text-left">

@@ -99,8 +99,8 @@ function Project() {
                 {proj.images.length > 0 && (
                   <ImageGallery
                     items={proj.images.map((img) => ({
-                      original: `http://localhost:8080/${img}`,
-                      thumbnail: `http://localhost:8080/${img}`,
+                      original: `${process.env.NEXT_PUBLIC_API}/${img}`,
+                      thumbnail: `${process.env.NEXT_PUBLIC_API}/${img}`,
                     }))}
                     showPlayButton={false}
                     showIndex={true}

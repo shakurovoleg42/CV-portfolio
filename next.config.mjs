@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-    swcMinify: true,
-  };
-  
-  export default nextConfig;
-  
+  images: {
+    remotePatterns: [
+      {
+        hostname: "**",
+      },
+    ],
+  },
+  webpack: (config) => {
+    config.cache = false; // Отключает кеширование Webpack
+    return config;
+  },
+};
+
+export default nextConfig;

@@ -25,8 +25,9 @@ function Index() {
     const fetchPortfolio = async () => {
       try {
         const data = await axios.get(
-          `${process.env.NEXT_PUBLIC_API}/portfolio`
+          `${process.env.NEXT_PUBLIC_API}/json/portfolio`
         );
+        console.log(data);
         setProjects(data.data);
       } catch (error) {
         console.log("Ошибка загрузки проектов:", error);
@@ -101,12 +102,7 @@ function Index() {
                 </div>
 
                 <div className="mt-5">
-                  <Link
-                    href={{
-                      pathname: `/projects/${project.slug}`,
-                      query: { title: project.slug },
-                    }}
-                  >
+                  <Link href={`/projects/${project.slug}`}>
                     <Button className="flex flex-row font-[700] text-[10px] sm:text-[16px]">
                       <CircleArrowRight className="mr-2 h-5 w-5" />
                       Посмотреть

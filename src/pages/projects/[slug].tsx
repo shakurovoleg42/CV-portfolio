@@ -30,10 +30,13 @@ function Project() {
   useEffect(() => {
     if (!slug) return;
 
+    const searchParams = new URLSearchParams(window.location.search);
+    const queryParam = searchParams.get("");
+
     const fetchPortfolio = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.NEXT_PUBLIC_API}/portfolio/${slug}`
+          `${process.env.NEXT_PUBLIC_API}/json/portfolio/slug/${slug}?query=${queryParam}`
         );
         setProject([data]);
         setError(null);

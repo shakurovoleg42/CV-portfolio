@@ -16,7 +16,7 @@ const config: Config = {
         poppins: ["Poppins", "sans-serif"],
       },
       colors: {
-        background: "hsl(var(--background))",
+        background: "#f80000",
         secondaryBg: "#171819",
         foreground: "hsl(var(--foreground))",
         blur: "#f5f5f5",

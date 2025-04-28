@@ -12,7 +12,7 @@ import Image from "next/image";
 
 function Project() {
   const router = useRouter();
-  const { slug } = router.query;
+  const { id } = router.query;
 
   const [project, setProject] = useState<
     {
@@ -28,15 +28,12 @@ function Project() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!slug) return;
-
-    const searchParams = new URLSearchParams(window.location.search);
-    const queryParam = searchParams.get("");
+    if (!id) return;
 
     const fetchPortfolio = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.NEXT_PUBLIC_API}/json/portfolio/slug/${slug}?query=${queryParam}`
+          `${process.env.NEXT_PUBLIC_API}/json/portfolio/${id}`
         );
         setProject([data]);
         setError(null);
@@ -47,10 +44,10 @@ function Project() {
     };
 
     fetchPortfolio();
-  }, [slug]);
+  }, [id]);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center p-3 bg-[#f9f9f9] font-poppins pb-10">
+    <div className="w-full h-full flex flex-col items-center justify-center p-3 bg-[#7a0909] font-poppins pb-10">
       <div className="w-full text-center p-0 lg:p-5 flex flex-col gap-2">
         <div>
           <Link href="/">
@@ -102,8 +99,8 @@ function Project() {
                 {proj.images.length > 0 && (
                   <ImageGallery
                     items={proj.images.map((img) => ({
-                      original: `${process.env.NEXT_PUBLIC_API}/${img}`,
-                      thumbnail: `${process.env.NEXT_PUBLIC_API}/${img}`,
+                      original: `${process.env.NEXT_PUBLIC_API}${img}`,
+                      thumbnail: `${process.env.NEXT_PUBLIC_API}${img}`,
                     }))}
                     showPlayButton={false}
                     showIndex={true}

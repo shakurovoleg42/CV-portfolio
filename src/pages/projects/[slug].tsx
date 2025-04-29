@@ -47,7 +47,7 @@ function Project() {
   }, [id]);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center p-3 bg-[#7a0909] font-poppins pb-10">
+    <div className="w-full h-full flex flex-col items-center justify-center p-3 bg-[#ffffff] font-poppins pb-10">
       <div className="w-full text-center p-0 lg:p-5 flex flex-col gap-2">
         <div>
           <Link href="/">

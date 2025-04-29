@@ -85,9 +85,9 @@ function Index() {
                 className="flex flex-col justify-center items-center gap-2 w-full h-auto border-[1px] border-gray-200 shadow-lg p-5 rounded-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
               >
                 <img
-                  src={`${process.env.NEXT_PUBLIC_API}${project.images[0]}`}
+                  src={`http://sellkon.uz${project.images[0]}`}
                   alt={project.title}
-                  className="rounded-lg border-[1px]"
+                  className="rounded-lg border-[1px] max-h-[300px] w-full object-contain  "
                 />
                 <div className="flex flex-col xl:flex-row  gap-2 mt-2">
                   <p className="font-semibold text-[18px] sm:text-2xl">

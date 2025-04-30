@@ -32,14 +32,6 @@ function Portfolio() {
               <h5 className="text-[18px] sm:text-2xl md:text-3xl font-bold">
                 {item.name}
               </h5>
-              {/* <span className="hidden sm:block">-</span> */}
-              {/* <a
-                className="flex sm:items-center text-secondaryBg hover:underline"
-                href={item.link}
-                target="_blank"
-              >
-                перейти на сайт
-              </a> */}
             </div>
             <p className="text-[#4f4f4f]">{item.description}</p>
             <div className="flex flex-col ml-2">
@@ -47,7 +39,6 @@ function Portfolio() {
                 <p key={item.items}>- {item.items}</p>
               ))}
             </div>
-            {/* ссылка на отдельную страницу об этом проекте */}
             <div className="mt-2">
               <a href={`projects/${item.slug}`}>
                 <Button>Подробнее</Button>
@@ -73,10 +64,9 @@ const portfolio = [
       { items: "Redux" },
       { items: "MUI" },
       { items: "Sass" },
-      { items: "Laravel" },
+      { items: "REST API" },
     ],
-    link: "https://oryx.kz",
-    slug: "oryx",
+    slug: "oryx?id=4",
   },
   {
     id: 2,
@@ -89,10 +79,9 @@ const portfolio = [
       { items: "ui.shadcn" },
       { items: "MUI" },
       { items: "Tailwind" },
-      { items: "Laravel" },
+      { items: "REST API" },
     ],
-    link: "https://apromstal.kz",
-    slug: "apromstal",
+    slug: "apromstal?id=6",
   },
   {
     id: 3,
@@ -100,7 +89,6 @@ const portfolio = [
     description: "Кофе зерновой/молотый в Казахстане",
     image: "/coffeelogia.png",
     tech: [{ items: "WordPress" }, { items: "Elementor" }],
-    link: "https://coffeelogia.kz/",
-    slug: "coffeelogia",
+    slug: "coffeelogia?id=7",
   },
 ];
